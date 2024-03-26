@@ -27,7 +27,7 @@ const taskSchema = z.object({
 type TaskFormData = z.infer<typeof taskSchema>;
 
 interface TodoModelProps {
-    id?: number,
+    id?: string,
     title?: string;
     description?: string;
     dueDate?: string;

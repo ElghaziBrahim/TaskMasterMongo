@@ -7,10 +7,10 @@ import getCurrentUser from "@/libs/getCurrentUser";
 
 export async function DELETE(
     request: Request,
-    { params }: { params: { id: number } }
+    { params }: { params: { id: string } }
 ) {
     try {
-        const todoId = +params.id;
+        const todoId = params.id;
         const currentUser = await getCurrentUser();
         const todo = await prisma.todo.findUnique({
             where: {
@@ -57,17 +57,16 @@ export async function DELETE(
 
 export async function PATCH(
     request: Request,
-    { params }: { params: { id: number } }
+    { params }: { params: { id: string } }
 ) {
     try {
-        const todoId = +params.id;
+        const todoId = params.id;
         const body = await request.json();
         const { dueDate, title, description, completed } = body;
         const currentUser = await getCurrentUser();
         const todo = await prisma.todo.findUnique({
             where: {
                 id: todoId,
-
             },
         })
 

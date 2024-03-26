@@ -25,7 +25,7 @@ interface TodoProps {
     todo: Todo
 }
 
-const Todo = ({ todo, currentUser }: TodoProps) => {
+const TodoComponant = ({ todo, currentUser }: TodoProps) => {
     const { toast } = useToast()
 
     const router = useRouter();
@@ -87,4 +87,4 @@ const Todo = ({ todo, currentUser }: TodoProps) => {
     );
 };
 
-export default Todo;
+export default TodoComponant;

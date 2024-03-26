@@ -1,5 +1,5 @@
 import prisma from "../libs/prismadb";
-import Todo from "./Todo";
+import TodoComponant from "./TodoComponant";
 import getCurrentUser from "@/libs/getCurrentUser";
 
 const HeroHome = async () => {
@@ -10,7 +10,7 @@ const HeroHome = async () => {
             <h1 className="text-3xl font-bold mb-6 text-center">My Todo List</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {todos.map((todo) => (
-                    <Todo key={todo.id} todo={todo} currentUser={currentUser} />
+                    <TodoComponant key={todo.id} todo={todo} currentUser={currentUser} />
                 ))}
             </div>
         </div>
